@@ -1,11 +1,12 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("astitva ");
+  res.send("hello ");
 });
 
-app.listen(3000,()=>{
-    console.log(`server run at port http://localhost:3000`)
-})
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server ready at ${port}`);
+});
