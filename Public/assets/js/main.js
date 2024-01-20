@@ -18,6 +18,33 @@
       // show or hide the back-top-top button
       
     };
+    const backToTop = document.querySelector(".back-to-top");
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          backToTop.style.display = "flex";
+        } else {
+          backToTop.style.display = "none";
+        }
+    
+        let navbarToggler = document.querySelector("#navbarToggler");
+        const navbarCollapse = document.querySelector("#navbarCollapse");
+    
+        navbarToggler.addEventListener("click", () => {
+          navbarToggler.classList.toggle("navbarTogglerActive");
+          navbarCollapse.classList.toggle("hidden");
+        });
+    
+    
+    
+        const faqs = document.querySelectorAll(".single-faq");
+        faqs.forEach((el) => {
+          el.querySelector(".faq-btn").addEventListener("click", () => {
+            el.querySelector(".icon").classList.toggle("rotate-180");
+            el.querySelector(".faq-content").classList.toggle("hidden");
+          });
+        });
   
     // ===== responsive navbar
 
