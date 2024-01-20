@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",

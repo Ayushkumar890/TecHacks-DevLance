@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
     <footer class="bg-black  relative z-10 wow fadeInUp" data-wow-delay=.15s>
-        <div class="border-t border-opacity-40 py-8 mt-12 lg:mt-[60px]">
+        <div class="border-t border-opacity-40 py-8  lg:mt-[30px]">
     
             <div class="flex flex-wrap mx-4">
                 <div class="w-full md:w-2/3 lg:w-1/2 px-4">
                     <div class=my-1>
                         <div class="flex items-center justify-center md:justify-start-mx-3">
-                            <a href="" class="text-base text-[#f3f4fe] hover:text-primary px-3">
+                            <a href="/" class="text-base text-[#f3f4fe] hover:text-primary px-3">
                                 Privacy policy
                             </a>
-                            <a href="" class="text-base text-[#f3f4fe] hover:text-primary px-3">
+                            <a href="/" class="text-base text-[#f3f4fe] hover:text-primary px-3">
                                 Legal notice
                             </a>
-                            <a href="" class="text-base text-[#f3f4fe] hover:text-primary px-3">
+                            <a href="/" class="text-base text-[#f3f4fe] hover:text-primary px-3">
                                 Terms of service
                             </a>
                         </div>
@@ -30,7 +23,7 @@
                         <p class="text-base text-[#f3f4fe]">
                             Designed and Developed by
                             <a href="" rel="nofollow noopner" targ class="text-primary hover:underline">
-                                DevLance
+                                Team DevLance
                             </a>
                         </p>
                     </div>
@@ -39,5 +32,43 @@
         </div>
     
     </footer>
-</body>
-</html>
+    <script>
+        AOS.init();
+      </script>
+    
+      <script src="assets/js/main.js"></script>
+      <script>
+        const backToTop = document.querySelector(".back-to-top");
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          backToTop.style.display = "flex";
+        } else {
+          backToTop.style.display = "none";
+        }
+    
+        let navbarToggler = document.querySelector("#navbarToggler");
+        const navbarCollapse = document.querySelector("#navbarCollapse");
+    
+        navbarToggler.addEventListener("click", () => {
+          navbarToggler.classList.toggle("navbarTogglerActive");
+          navbarCollapse.classList.toggle("hidden");
+        });
+    
+    
+    
+        const faqs = document.querySelectorAll(".single-faq");
+        faqs.forEach((el) => {
+          el.querySelector(".faq-btn").addEventListener("click", () => {
+            el.querySelector(".icon").classList.toggle("rotate-180");
+            el.querySelector(".faq-content").classList.toggle("hidden");
+          });
+        });
+      </script>
+    
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    </body>
+    
+    </html>
