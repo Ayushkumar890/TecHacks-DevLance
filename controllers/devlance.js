@@ -98,7 +98,7 @@ exports.getDevlanceDevlancer = async (req, res) => {
   if (token) {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const the_user = await devlancer.findById(decoded._id); //getting requested user
-    if(the_user.accountType == "Client"){
+    if(the_user && the_user.accountType == "Client"){
       const all_posts = await post.find({});
       const all_developers = await devlancer.find({ accountType: "Developer" });
       res.render("mainClient", {

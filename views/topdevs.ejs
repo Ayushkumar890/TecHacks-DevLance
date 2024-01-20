@@ -116,25 +116,27 @@
                         <div class="box1 box lg:ml-4">
                             <div class="content">
                                 <div class="image">
-                                    <img src=<%=all_developers[i].git_profile.img%> alt="Profile Image" />
+                                    <img src="<%= all_developers[i].git_profile?.img %>" alt="Profile Image" />
+
                                 </div>
                                 
                                 <div class="text">
                                     <p class="name">
-                                        <%=all_developers[i].git_profile.username %>
-                                    </p>
+                                        <%= all_developers[i].git_profile?.username %>
+                                      </p>
+                                      
                                     <p class="job_title mt-2">
-                                        <%= all_developers[i].git_profile.bio %>
+                                        <%= all_developers[i].git_profile?.bio %>
                                     </p>
                                     <p class="job_discription" style="font-size: 13px;"><b>
-                                            <%=all_developers[i].git_profile.totalContributions%>
+                                            <%=all_developers[i].git_profile?.totalContributions%>
                                         </b>Open Source Contributions</p>
                                 </div>
                                 <div class="icons">
                                     <a href=<%=all_developers[i].linkedin%> target='_blank'> <button>
                                             <ion-icon name="logo-linkedin"></ion-icon>
                                         </button></a>
-                                    <a href="https://github.com/<%=all_developers[i].git_profile.username  %>"
+                                    <a href="https://github.com/<%=all_developers[i].git_profile?.username  %>"
                                         target='_blank'>
                                         <button>
                                             <ion-icon name="logo-github"></ion-icon>

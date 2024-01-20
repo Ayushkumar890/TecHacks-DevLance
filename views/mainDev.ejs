@@ -91,10 +91,11 @@
                 </ul>
             </div>
         </aside>
-        <div class=" my-6 mx-6">
+        <div class="ml-[300px] my-6 mx-6">
             <div class="flex flex-wrap items-start justify-end -mb-3">
                 <div class="mr-6">
-                    <h1 class="text-4xl text-white font-semibold mb-2">Hey! <%= the_user.git_profile.username %>
+                    
+                    <h1 class="text-4xl text-white font-semimbbold -2">Hey! <%= the_user.git_profile.username %>
                     </h1>
                     <h2 class="text-white ml-0.5">Find exciting work and sync up with visionary clients on DevLance</h2>
                 </div>
@@ -111,8 +112,8 @@
                 </a>
                 <a href="/devlance/client">
                     <button
-                        class="inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 47.41" style="width: 15%;">
+                        class="inline-flex w-[80%] justify-center items-center lg:w-[60%] lg:px-3 lg:py-1 text-white  bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">
+                        <svg class="w-[15%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 47.41">
                             <defs>
                                 <style>
                                     .cls-1 {
@@ -159,7 +160,7 @@
 
 
             <button type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Your
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ml-4 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Your
                 Posts</button>
             <div class="w-11/12 md:w-6/12 sm:w-9/12 bg-gray-900 rounded-2xl transform -translate-y-5 mt-6"
                 style="margin:auto;display: none;">
@@ -211,44 +212,25 @@
                     </div>
                 </section>
                 <%}%>
-                    <!-- <section class="w-full flex px-3 py-2 " style="border: none;outline: none;">
-            <div class="mr-1 -mb-24">
-                <img class="rounded-full" src=<%=the_user.git_profile.img %>
-                alt="Profile Picture" style="height: 55px;">
-            </div>
-            <div class="flex-1" style="border: none;outline: none;">
-                <form action="/devlance/mainDev" method="post">
-                    <div class="flex justify-end">
-                        
-                        <button
-                        class="transition duration-500  ease-in-out bg-blue-500  hover:bg-opacity-100 text-white hover:text-opacity-100 py-2 px-3 rounded-full text-base font-bold focus:outline-none"
-                        type="submit">&nbsp; Post &nbsp;</button>
-                    </div>
-                    <textarea style="border: none;"
-                        class="w-full p-2 bg-gray-800 focus:ring-0  outline-none placeholder-gray-400 text-white resize-none rounded-lg"
-                         placeholder="Post something clients might interest!" name="blog"></textarea>
-                    <div class="flex items-center justify-end pt-2 ">
+
+                    <section class="flex md:h-[40vh] flex-col justify-end">
                         <div>
-                </form>
-            </div>
-    </div>
-</div>
-</section> -->
-                    <section class="" >
-                        <form action="/devlance/mainDev" method="post" class="flex justify-between ">
-                            <div class="mx-2 hidden lg:block">
-                                <img class="rounded-full " src=<%=the_user.git_profile.img %>
-                                alt="Profile Picture" style="height: 55px; width:55px">
-                            </div>
-                            <div class="w-full mx-2">
-                                <textarea style="border: none;"
-                                    class="w-full p-2 bg-gray-800 focus:ring-0 flex outline-none placeholder-gray-400 text-white resize-none rounded-lg"
-                                    placeholder="Post something clients might interest!" name="blog"></textarea>
-                            </div>
-                            <div class="md:mx-4">
-                                <button class="button bg-blue-900 p-6 rounded-full px-10" type="submit">Post</button>
-                            </div>
-                        </form>
+                            <form action="/devlance/mainDev" method="post" class="flex justify-between ">
+                                <div class="mx-2 hidden lg:block">
+                                    <img class="rounded-full " src=<%=the_user.git_profile.img %>
+                                    alt="Profile Picture" style="height: 55px; width:55px">
+                                </div>
+                                <div class="w-full mx-2">
+                                    <textarea style="border: none;"
+                                        class="w-full p-2 bg-gray-800 focus:ring-0 flex  outline-none placeholder-gray-400 text-white resize-none rounded-lg"
+                                        placeholder="Post something clients might interest!" name="blog"></textarea>
+                                </div>
+                                <div class=" -ml-10">
+                                    <button class="button  bg-blue-700 text-white p-5 rounded-full px-10"
+                                        type="submit">Post</button>
+                                </div>
+                            </form>
+                        </div>
                     </section>
         </div>
     </div>
