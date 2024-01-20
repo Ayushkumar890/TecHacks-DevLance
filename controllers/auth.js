@@ -47,7 +47,9 @@ exports.postRegister = async (req, res) => {
           photo: photo,
         });
 
-        verification_link = `https://techack-devlance.onrender.comverify/${token}`;
+        // verification_link = `https://techack-devlance.onrender.com/verify/${token}`;
+        verification_link = `https://techack-devlance.onrender.com/verify/${token}`;
+
         const message = {
           to: email,
           from: "Thexitingway@gmail.com",
