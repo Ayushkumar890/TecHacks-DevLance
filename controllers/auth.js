@@ -50,7 +50,7 @@ exports.postRegister = async (req, res) => {
         verification_link = `http://localhost:3000/verify/${token}`;
         const message = {
           to: email,
-          from: "aryans12345678@gmail.com",
+          from: "Thexitingway@gmail.com",
           subject: "DevLance Verification!",
           text: `Verify your account here (paste link on browser if not clickabl)\n \n ${verification_link} \n\n Thanks For Choosing Devlance! \n Team, The Xiting Way`,
         };

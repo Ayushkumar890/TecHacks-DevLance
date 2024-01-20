@@ -93,7 +93,7 @@
         </aside>
         <div class=" my-6 mx-6">
 
-            <% if(the_user.accountType==="Developer" ){ %>
+            <% if(the_user && the_user.accountType=="Developer" ){ %>
                 <div class="flex flex-wrap items-start justify-end -mb-3">
                     <!-- <a href="/devlance/devlancer">
                         <button
@@ -136,9 +136,14 @@
                 <% }%>
                     <div class="p-4 sm:ml-64">
                         <div class="mr-6">
-                            <h1 class="text-4xl text-white font-semibold mb-2">Hey! <%= the_user.email.split("@")[0] %>
-                            </h1>
-                            <h2 class="text-white ml-0.5">Find Elite Devs On Devlance</h2>
+                            <<% if (the_user && the_user.email) { %>
+                                <h1 class="text-4xl text-white font-semibold mb-2">Hey! <%= the_user.email.split("@")[0] %></h1>
+                                <h2 class="text-white ml-0.5">Find Elite Devs On Devlance</h2>
+                            <% } else { %>
+                                <!-- Handle the case when the_user or its email is null or undefined -->
+                                <h1 class="text-4xl text-white font-semibold mb-2">Hey! Guest</h1>
+                                <h2 class="text-white ml-0.5">Find Elite Devs On Devlance</h2>
+                            <% } %>
                         </div> <br>
                         <br>
                         <h3 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-5xl">
