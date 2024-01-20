@@ -19,23 +19,45 @@
   }
 </style>
 
-  <%- include("partials/header.ejs") -%>
+<%- include("partials/header.ejs") -%>
 
   <!-- hero section -->
-  <div id="home" class="relative pt-[120px] md:pt-[130px] lg:pt-[160px] bg-center bg-cover bg-no-repeat object-cover" style="background-image: url('assets/images/bg2.jpg');background-position: center; background-repeat: no-reapeat ; background-size: cover" >
-    <div class="container" >
+  <div id="home" class="relative pt-[120px] md:pt-[130px] lg:pt-[160px] bg-center bg-cover bg-no-repeat object-cover"
+    style="background-image: url('assets/images/bg2.jpg');background-position: center; background-repeat: no-reapeat ; background-size: cover">
+    <div class="container">
       <div class="flex flex-wrap items-center -mx-4">
         <div class="w-full px-4 ">
-          
-          <div class="hero-content text-center max-w-[780px] mx-auto wow fadeInUp "  data-wow-delay=.2s>
+
+          <div class="hero-content text-center max-w-[780px] mx-auto wow fadeInUp " data-wow-delay=.2s>
             <h1
-              class="text-white font-bold text-3xl sm:text-4xl md:text-[45px] leading-snug sm:leading-snug md:leading-snug mb-8" >
+              class="text-white font-bold text-3xl sm:text-4xl md:text-[45px] leading-snug sm:leading-snug md:leading-snug mb-8">
               Elevate your freelance experience with DevLance - Where Developers Thrive
             </h1>
             <p
               class="text-base sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed mx-auto mb-10 text-[#e4e4e4] max-w-[600px]">
-              Devlance redefines freelancing, empowering developers with an open-source ecosystem, transparent, collaboration, and innovative Github intergration, Join the revolution!
+              Devlance redefines freelancing, empowering developers with an open-source ecosystem, transparent,
+              collaboration, and innovative Github intergration, Join the revolution!
             </p>
+            <ul class="flex flex-wrap items-center justify-center mb-10">
+              <li>
+                <a href="/login"
+                  class="  py-4  px-6  sm:px-10  inline-flex  items-center  justify-center  text-center text-dark text-base  bg-white  hover:text-primary hover:shadow-lg  font-medium  rounded-lg  transition  duration-300  ease-in-out">
+                  Login
+                </a>
+              </li>
+              <li>
+                <a href="/register" target="_blank"
+                  class="  text-base  font-medium  text-white  py-4  px-6  sm:px-10  flex  items-center  hover:opacity-70  transition  duration-300  ease-in-out">
+                  Register
+                  <span class="pl-2">
+                    <svg width="20" height="8" viewBox="0 0 20 8" class="fill-current">
+                      <path
+                        d="M19.2188 2.90632L17.0625 0.343819C16.875 0.125069 16.5312 0.0938193 16.2812 0.281319C16.0625 0.468819 16.0312 0.812569 16.2188 1.06257L18.25 3.46882H0.9375C0.625 3.46882 0.375 3.71882 0.375 4.03132C0.375 4.34382 0.625 4.59382 0.9375 4.59382H18.25L16.2188 7.00007C16.0312 7.21882 16.0625 7.56257 16.2812 7.78132C16.375 7.87507 16.5 7.90632 16.625 7.90632C16.7812 7.90632 16.9375 7.84382 17.0312 7.71882L19.1875 5.15632C19.75 4.46882 19.75 3.53132 19.2188 2.90632Z" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
 
 
           </div>
@@ -43,8 +65,7 @@
         <div class="w-full px-4">
           <div class="mx-auto max-w-[845px] relative z-10 wow fadeInUp" data-wow-delay=.25s>
             <div class=mt-4>
-              <img src=assets/images/landing3.png alt=hero
-                class="max-w-full mx-auto rounded-t-xl h-96 rounded-tr-xl" />
+              <img src=assets/images/landing3.png alt=hero class="max-w-full mx-auto rounded-t-xl h-96 rounded-tr-xl" />
             </div>
           </div>
         </div>
@@ -57,7 +78,7 @@
 
   <!-- feature section -->
 
-  <section id="feature" class="pt-20 lg:pt-[120px] pb-8 lg:pb-[50px]" >
+  <section id="feature" class="pt-20 lg:pt-[120px] pb-8 lg:pb-[50px]">
     <div class=container>
       <div class="flex flex-wrap -mx-4">
         <div class="w-full px-4">
@@ -185,41 +206,45 @@
 
   <!-- about section -->
 
-      <section id=about class="pt-20 lg:pt-[80px] pb-20 lg:pb-[80px] bg-[#f3f4fe]">
-      <div class=container>
-        <div class="bg-white wow fadeInUp" data-wow-delay=.2s>
-          <div class="flex flex-wrap -mx-4">
-            <div class="w-full px-4">
-              <div class="lg:flex items-center justify-between border overflow-hidden">
-                <div
-                  class="lg:max-w-[565px] xl:max-w-[640px] w-full py-12 px-7 sm:px-12 md:p-16 lg:py-9 lg:px-16 xl:p-[70px]">
-                  <span class="text-4xl font-medium text-white py-2 px-5 bg-primary inline-block mb-5">
-                    About Us
-                  </span>
-                  <h2 class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-6">
-                    "Empowering Developers Through Openness, Trust, and Innovation"
-                  </h2>
-                  <p class="text-base text-body-color mb-9 leading-relaxed">
-                    DevLance revolutionizes freelancing for developers with its open-source ethos and community-driven approach. Founded on the principles of transparency and trust, DevLance eliminates intermediaries, ensuring fair compensation and timely payments. 
-                  <p class="text-base text-body-color mb-9 leading-relaxed">
-                    The platform's unique GitHub Profile Sync feature enhances security, verifying each developer's authenticity. Managed by a community of open-source enthusiasts, DevLance fosters collaboration, innovation, and genuine contributions in the dynamic world of freelance development.
-                  </p>
-                  <a href
-                    class="inline-flex items-center justify-center py-4 px-6 rounded text-white bg-primary text-base font-medium hover:bg-opacity-90 hover:shadow-lg transition duration-300 ease-in-out">
-                    Learn More
-                  </a>
-                </div>
-                <div class=text-center>
-                  <div class="relative inline-block z-10">
-                    <img src=assets/images/about.jpg alt=image class="mx-auto lg:ml-auto" />
-                  </div>
+  <section id=about class="pt-20 lg:pt-[80px] pb-20 lg:pb-[80px] bg-[#f3f4fe]">
+    <div class=container>
+      <div class="bg-white wow fadeInUp" data-wow-delay=.2s>
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full px-4">
+            <div class="lg:flex items-center justify-between border overflow-hidden">
+              <div
+                class="lg:max-w-[565px] xl:max-w-[640px] w-full py-12 px-7 sm:px-12 md:p-16 lg:py-9 lg:px-16 xl:p-[70px]">
+                <span class="text-4xl font-medium text-white py-2 px-5 bg-primary inline-block mb-5">
+                  About Us
+                </span>
+                <h2 class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-6">
+                  "Empowering Developers Through Openness, Trust, and Innovation"
+                </h2>
+                <p class="text-base text-body-color mb-9 leading-relaxed">
+                  DevLance revolutionizes freelancing for developers with its open-source ethos and community-driven
+                  approach. Founded on the principles of transparency and trust, DevLance eliminates intermediaries,
+                  ensuring fair compensation and timely payments.
+                <p class="text-base text-body-color mb-9 leading-relaxed">
+                  The platform's unique GitHub Profile Sync feature enhances security, verifying each developer's
+                  authenticity. Managed by a community of open-source enthusiasts, DevLance fosters collaboration,
+                  innovation, and genuine contributions in the dynamic world of freelance development.
+                </p>
+                <a href
+                  class="inline-flex items-center justify-center py-4 px-6 rounded text-white bg-primary text-base font-medium hover:bg-opacity-90 hover:shadow-lg transition duration-300 ease-in-out">
+                  Learn More
+                </a>
+              </div>
+              <div class=text-center>
+                <div class="relative inline-block z-10">
+                  <img src=assets/images/about.jpg alt=image class="mx-auto lg:ml-auto" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- about section end -->
 
@@ -236,7 +261,7 @@
             <h2 class="font-bold text-3xl sm:text-4xl md:text-[42px] text-dark mb-4">
               Any Questions? Answered
             </h2>
-           
+
           </div>
         </div>
       </div>
@@ -262,7 +287,8 @@
             </button>
             <div class="faq-content pl-[62px] hidden">
               <p class="text-base text-body-color leading-relaxed py-3">
-                DevLance aims to revolutionize freelancing for developers, fostering openness, transparency, and community collaboration.
+                DevLance aims to revolutionize freelancing for developers, fostering openness, transparency, and
+                community collaboration.
               </p>
             </div>
           </div>
@@ -385,7 +411,8 @@
             </button>
             <div class="faq-content pl-[62px] hidden">
               <p class="text-base text-body-color leading-relaxed py-3">
-                Our platform combines openness, security, and community-driven collaboration, reshaping the future of freelancing for developers.
+                Our platform combines openness, security, and community-driven collaboration, reshaping the future of
+                freelancing for developers.
               </p>
             </div>
           </div>
@@ -408,11 +435,11 @@
     </div>
   </section>
   <!--end fqa section -->
-  
+
 
   <!-- our team section -->
 
-  
+
   <section id="team" class="pt-20 lg:pt-[120px] pb-10 lg:pb-10">
     <div class=container>
       <div class="flex flex-wrap -mx-4">
@@ -428,11 +455,11 @@
         </div>
       </div>
       <div class="flex flex-wrap justify-center -mx-4">
-       
+
         <div class="w-full sm:w-1/2 lg:w-1/4 px-4">
           <div class="mb-10 wow fadeInUp" data-wow-delay=.15s>
             <div class="relative w-[170px] h-170px] rounded-full z-10 mx-auto mb-6">
-              <img src= "assets/images/ayush.jpg" alt=image class="w-full rounded-full" />
+              <img src="assets/images/ayush.jpg" alt=image class="w-full rounded-full" />
               <span class="absolute top-0 left-0 z-[-1]">
               </span>
               <span class="absolute right-0 bottom-0">
@@ -474,7 +501,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="w-full sm:w-1/2 lg:w-1/4 px-4">
           <div class="mb-10 wow fadeInUp" data-wow-delay=.25s>
             <div class="relative w-[170px] h-[170px] rounded-full z-10 mx-auto mb-6">
@@ -491,7 +518,7 @@
                 Astitva Raj
               </h4>
               <p class="font-medium text-sm text-body-color mb-5">
-               Product Development 
+                Product Development
               </p>
               <div class="flex items-center justify-center">
                 <a href class="text-[#cdced6] hover:text-primary w-8 h-8 mx-2 flex items-center justify-center">
@@ -592,28 +619,28 @@
 
   <%- include("partials/footer.ejs") -%>
 
-  <!--end footer section -->
+    <!--end footer section -->
 
 
-  <!-- ====== Back To Top  -->
+    <!-- ====== Back To Top  -->
 
-  <a href
-    class="hidden items-centerjustify-center bg-primary text-whitew-10 h-10 rounded-md fixed bottom-8 right-8 left-autoz-[999] hover:bg-dark back-to-top shadow-md transition duration-300 ease-in-out">
-    <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
-  </a>
-  <!-- ====== Back To Top Ende -->
+    <a href
+      class="hidden items-centerjustify-center bg-primary text-whitew-10 h-10 rounded-md fixed bottom-8 right-8 left-autoz-[999] hover:bg-dark back-to-top shadow-md transition duration-300 ease-in-out">
+      <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
+    </a>
+    <!-- ====== Back To Top Ende -->
 
-  <!-- ====== All Scripts -->
+    <!-- ====== All Scripts -->
 
 
-  <script>
-    AOS.init();
-  </script>
+    <script>
+      AOS.init();
+    </script>
 
-  <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-</body>
+    </body>
 
 </html>
