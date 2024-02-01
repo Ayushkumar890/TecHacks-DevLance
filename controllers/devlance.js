@@ -16,7 +16,7 @@ exports.devlanceClient = async (req, res) => {
     const the_user = await devlancer.findById(decoded._id); //getting requested user
 
     const all_posts = await post.find({});
-    const all_developers = await devlancer.find({ accountType: "Developer" });
+    const all_developers = await devlancer.find({ accountType: "Developer"});
     res.render("mainClient", {
       the_user: the_user,
       all_developers: all_developers,
@@ -25,6 +25,7 @@ exports.devlanceClient = async (req, res) => {
   } else {
     res.redirect("/login");
   }
+  
 };
 
 exports.devlanceTopDevs = async (req, res) => {

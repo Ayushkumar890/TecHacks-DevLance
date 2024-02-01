@@ -47,8 +47,8 @@ exports.postRegister = async (req, res) => {
           photo: photo,
         });
 
-        // verification_link = `http://localhost:3000/verify/${token}`;
-        verification_link = `https://techack-devlance.onrender.com/verify/${token}`;
+        verification_link = `http://localhost:3000/verify/${token}`;
+        // verification_link = `https://techack-devlance.onrender.com/verify/${token}`;
         const message = {
           to: email,
           from: "Thexitingway@gmail.com",
@@ -138,7 +138,7 @@ exports.postLogin = async (req, res) => {
 
           res.cookie("token", token, {
             httpOnly: true,
-            expires: new Date(Date.now() + 6000 * 1000), //60*1000 = 60 seconds
+            expires: new Date(Date.now() + 1000 * 1000), //10*1000 = 10 seconds
           });
           res.redirect("/devlance/client");
         } else {
