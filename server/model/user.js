@@ -37,7 +37,6 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-//   git_profile: {}, // optionally add validation if needed
 });
 
 module.exports = mongoose.model('User', userSchema);

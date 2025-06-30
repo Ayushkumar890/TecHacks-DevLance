@@ -52,11 +52,9 @@ exports.GithubVerify = async (req, res) => {
             });
         }
 
-        // ✅ Decode token to get user ID
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded._id;
 
-        // ✅ Check GitHub user existence
         const githubResponse = await axios.get(`https://api.github.com/users/${username}`);
         if (githubResponse.status !== 200) {
             return res.status(404).json({
@@ -65,7 +63,6 @@ exports.GithubVerify = async (req, res) => {
             });
         }
 
-        // ✅ Find the logged-in user in DB and update github_verified
         const updatedUser = await User.findByIdAndUpdate(
             userId,
             {
@@ -84,7 +81,6 @@ exports.GithubVerify = async (req, res) => {
             });
         }
 
-        // ✅ Respond with success
         return res.status(200).json({
             success: true,
             message: "GitHub account verified successfully",
