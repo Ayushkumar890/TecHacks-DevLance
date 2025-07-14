@@ -15,7 +15,7 @@ function UserPosts() {
         setDeleting(postId);
         try {
             // Replace with your axios call:
-            await axios.delete(`http://localhost:5000/api/post/delete/${postId}`, {
+            await axios.delete(`https://techacks-devlance.onrender.com/api/post/delete/${postId}`, {
                 withCredentials: true,
             });
             
@@ -33,7 +33,7 @@ function UserPosts() {
         try {
             // Replace with your axios call:
             await axios.put(
-                `http://localhost:5000/api/post/edit/${postId}`,
+                `https://techacks-devlance.onrender.com/api/post/edit/${postId}`,
                 { blog: editedContent },
                 { withCredentials: true }
             );
@@ -56,7 +56,7 @@ function UserPosts() {
         try {
             setLoading(true);
             // Replace with your axios call:
-            const res = await axios.get("http://localhost:5000/api/post/userpost", { 
+            const res = await axios.get("https://techacks-devlance.onrender.com/api/post/userpost", { 
                 withCredentials: true 
             });
             setPosts(res.data.posts);

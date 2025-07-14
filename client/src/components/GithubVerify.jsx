@@ -16,7 +16,7 @@ export default function GithubVerify() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/githubverify', { username }, { withCredentials: true });
+      const res = await axios.post('https://techacks-devlance.onrender.com/api/auth/githubverify', { username }, { withCredentials: true });
       if (res.data.success) {
         navigate(res.data.redirect);
       }
