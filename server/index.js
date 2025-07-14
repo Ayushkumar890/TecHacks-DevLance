@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://techacks-devlance.onrender.com',
   credentials: true
 }))
 require('./config/Db').connect();
