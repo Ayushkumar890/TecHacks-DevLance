@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://techacks-devlance.onrender.com',
+  origin: 'https://devlance-saas.vercel.app',
   credentials: true
 }))
 require('./config/Db').connect();

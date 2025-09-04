@@ -39,7 +39,7 @@ exports.postRegister = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     const photo = "client.jpg"; // Default profile pic
     if (userExists && userExists.verified === false) {
-      const alreadyuseremail = `https://techacks-devlance.onrender.com/user/verify/${userExists.verification_token}`
+      const alreadyuseremail = `https://devlance-saas.vercel.app/user/verify/${userExists.verification_token}`
       await mailSender(
         email,
         "Verification Email",
@@ -62,7 +62,7 @@ exports.postRegister = async (req, res) => {
       photo: photo,
     });
 
-    const verification_link = `https://techacks-devlance.onrender.com/user/verify/${token}`;
+    const verification_link = `https://devlance-saas.vercel.app/user/verify/${token}`;
 
     // Send verification email
 
