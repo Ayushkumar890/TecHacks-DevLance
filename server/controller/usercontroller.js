@@ -173,8 +173,10 @@ exports.postLogin = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
+      secure: true,        
+      sameSite: "none",    
     });
+
 
     // Send redirect route depending on user type
     if (current_user.accountType === "Client") {
