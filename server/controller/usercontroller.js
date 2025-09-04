@@ -173,10 +173,7 @@ exports.postLogin = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: 60 * 60 * 1000,// 1 hour
-      secure: false ,
-      sameSite: "Lax",
-
+      secure: false,
     });
 
     // Send redirect route depending on user type
@@ -197,7 +194,7 @@ exports.postLogin = async (req, res) => {
         return res.status(200).json({
           success: true,
           message: "GitHub verification required",
-          redirect: "/dev/verify", 
+          redirect: "/dev/verify",
         });
       }
     }
@@ -212,10 +209,10 @@ exports.postLogin = async (req, res) => {
 
 
 exports.logout = (req, res) => {
-    res.cookie('token', '', {
-        httpOnly: true,
-        expires: new Date(Date.now() - 1),
-        // secure: process.env.NODE_ENV === 'production'
-    });
-    res.status(200).json({ success: true, message: 'Logged out successfully' });
+  res.cookie('token', '', {
+    httpOnly: true,
+    expires: new Date(Date.now() - 1),
+    // secure: process.env.NODE_ENV === 'production'
+  });
+  res.status(200).json({ success: true, message: 'Logged out successfully' });
 };
