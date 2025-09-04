@@ -6,7 +6,7 @@ function PostList() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("https://techacks-devlance.onrender.com/api/post/all", { withCredentials: true });
+      const res = await axios.get("https://devlance-veiu.onrender.com/api/post/all", { withCredentials: true });
       setPosts(res.data.posts);
     } catch (error) {
       console.error("Error fetching posts:", error.message);

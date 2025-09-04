@@ -29,7 +29,7 @@ export default function RegisterForm() {
 
     try {
       await axios.post(
-        "https://techacks-devlance.onrender.com/user/postregister",
+        "https://devlance-veiu.onrender.com/user/postregister",
         {
           email,
           linkedin,

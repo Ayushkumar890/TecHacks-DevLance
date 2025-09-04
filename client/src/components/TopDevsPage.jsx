@@ -7,7 +7,7 @@ const TopDevsPage = () => {
 
   useEffect(() => {
     // Your original axios call - replace this mock with your actual API call
-    axios.get("https://techacks-devlance.onrender.com/api/git/topdevs", { withCredentials: true })
+    axios.get("https://devlance-veiu.onrender.com/api/git/topdevs", { withCredentials: true })
       .then(res => {
         setDevs(res.data.devs);
         setLoading(false);

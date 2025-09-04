@@ -25,7 +25,7 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://techacks-devlance.onrender.com/api/git/getGithubProfile", {
+        const response = await axios.get("https://devlance-veiu.onrender.com/api/git/getGithubProfile", {
           withCredentials: true,
         });
 

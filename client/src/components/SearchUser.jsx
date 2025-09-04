@@ -31,7 +31,7 @@ const SearchUser = () => {
     try {
       setLoading(true);
       setErrorMsg("");
-      const res = await axios.get(`https://techacks-devlance.onrender.com/api/git/search/${username}`);
+      const res = await axios.get(`https://devlance-veiu.onrender.com/api/git/search/${username}`);
       setUserData(res.data.data);
     } catch (error) {
       setUserData(null);

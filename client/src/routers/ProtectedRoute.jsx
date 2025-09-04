@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await axios.get('https://techacks-devlance.onrender.com/api/auth/verify-token', {
+                const response = await axios.get('https://devlance-veiu.onrender.com/api/auth/verify-token', {
                     withCredentials: true,
                 });
 

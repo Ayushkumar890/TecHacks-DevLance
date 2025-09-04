@@ -9,7 +9,7 @@ function PostForm({ onPostCreated }) {
         try {
             const profileUrl = sessionStorage.getItem("profileUrl");
             const res = await axios.post(
-                "https://techacks-devlance.onrender.com/api/post/create",
+                "https://devlance-veiu.onrender.com/api/post/create",
                 { blog ,profileUrl},
                 { withCredentials: true }
             );
