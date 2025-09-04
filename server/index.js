@@ -28,16 +28,16 @@ app.use('/api/post', postRoutes);
 app.use("/api/git", githubroute)
 
 // const frontendPath = path.join(__dirname, '../client/build');
-app.use(express.static(path.join(_dirname, "/client/build")));
+// app.use(express.static(path.join(_dirname, "/client/build")));
 
-app.use(express.static(frontendPath));
+// app.use(express.static(frontendPath));
 
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(frontendPath, 'index.html'));
 // });
-app.get('*', (_, res) => {
-    res.sendFile(path.resolve(_dirname, "client", "build", "index.html"));
-});
+// app.get('*', (_, res) => {
+//     res.sendFile(path.resolve(_dirname, "client", "build", "index.html"));
+// });
 
 app.use((err, req, res, next) => {
   console.error(err)
