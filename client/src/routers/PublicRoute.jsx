@@ -1,44 +1,45 @@
 import { Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import ClipLoader from 'react-spinners/ClipLoader';
+// import ClipLoader from 'react-spinners/ClipLoader';
 
 const PublicRoute = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [loading, setLoading] = useState(true);
-
+    // const [loading, setLoading] = useState(true);
+    
     useEffect(() => {
         const checkAuth = async () => {
             try {
                 const response = await axios.get('https://devlance-veiu.onrender.com/api/auth/verify-token', {
                     withCredentials: true,
                 });
-
-                if (response.data.success) {
+                if (!response.data.success) {
+                    console.log("token not provided")
+                }
+                else if (response.data.success) {
                     setIsAuthenticated(true);
                 } else {
                     setIsAuthenticated(false);
                 }
             } catch (error) {
-                console.error('Error verifying token:', error);
+                // console.error('Error verifying token:', error);
                 setIsAuthenticated(false);
             } finally {
-                setLoading(false);
+                // setLoading(false);
             }
         };
-
         checkAuth();
     }, []);
 
-    if (loading) return <div><div className="flex justify-center mt-20">
-    <ClipLoader
-      color={'#0d8007'}
-      loading={loading}
-      size={100}
-      aria-label="Loading Spinner"
-      data-testid="loader"
-    />
-  </div></div>;
+//     if (loading) return <div><div className="flex justify-center mt-20">
+//     <ClipLoader
+//       color={'#0d8007'}
+//       loading={loading}
+//       size={100}
+//       aria-label="Loading Spinner"
+//       data-testid="loader"
+//     />
+//   </div></div>;
 
     return isAuthenticated ? <Navigate to="/posts" /> : children;
 };

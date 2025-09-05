@@ -3,23 +3,23 @@ const User = require("../model/user");
 const jwt = require("jsonwebtoken");
 
 exports.verifyToken = (req, res) => {
-    const token = req.cookies.token;
+    const token = req.cookies.jwttoken;
     // console.log("Token exists:", token);
 
     if (!token) {
-        return res.status(401).json({ success: false, message: 'No token provided' });
+        // return res.status(401).json({ success: false, message: 'No token provided' });
+        console.log("token is missing")
+    } else {
+        jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(403).json({ success: false, message: 'Invalid token' });
+            }
+            res.status(200).json({ success: true, user: decoded });
+        });
     }
-
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-        if (err) {
-            return res.status(403).json({ success: false, message: 'Invalid token' });
-        }
-        res.status(200).json({ success: true, user: decoded });
-    });
 };
-
 exports.isAuthenticated = (req, res, next) => {
-    const token = req.cookies.token;
+    const token = req.cookies.jwttoken;
     if (!token) return res.status(401).json({ success: false, message: "Unauthorized" });
 
     try {
@@ -36,7 +36,7 @@ exports.isAuthenticated = (req, res, next) => {
 exports.GithubVerify = async (req, res) => {
     try {
         const { username } = req.body;
-        const token = req.cookies.token;
+        const token = req.cookies.jwttoken;
 
         if (!username) {
             return res.status(400).json({

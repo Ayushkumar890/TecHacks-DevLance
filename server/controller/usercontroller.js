@@ -173,7 +173,7 @@ exports.postLogin = async (req, res) => {
     );
 
     // Set token in cookie
-    res.cookie("token", token, {
+    res.cookie("jwttoken", token, {
       httpOnly: true,
       secure: true,
       maxAge: 60 * 60 * 1000,
@@ -214,7 +214,7 @@ exports.postLogin = async (req, res) => {
 
 
 exports.logout = (req, res) => {
-  res.cookie('token', '', {
+  res.cookie('jwttoken', '', {
     httpOnly: true,
     expires: new Date(Date.now() - 1),
     // secure: process.env.NODE_ENV === 'production'

@@ -7,8 +7,8 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // "success" or "error"
-  const [messageColor, setMessageColor] = useState(""); // "success" or "error"
+  const [messageType, setMessageType] = useState("");
+  const [messageColor, setMessageColor] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [focusedField, setFocusedField] = useState("");
@@ -19,13 +19,19 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://devlance-veiu.onrender.com/user/postlogin", { email, password }, { withCredentials: true });
+      if (!email || !password) {
+        setMessage("fill all field");
+      }
+      else {
+        const response = await axios.post("https://devlance-veiu.onrender.com/user/postlogin", { email, password }, { withCredentials: true });
 
-      if (response) {
-        navigate(response.data.redirect);
-      } else {
-        setMessage(response.data.message || "Login failed");
-        setMessageColor("text-red-500");
+        if (response) {
+          setMessageType("success")
+          navigate(response.data.redirect);
+        } else {
+          setMessage(response.data.message || "Login failed");
+          setMessageColor("text-red-500");
+        }
       }
     } catch (error) {
       setMessage("An error occurred. Please try again.");
