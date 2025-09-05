@@ -62,7 +62,7 @@ exports.postRegister = async (req, res) => {
       photo: photo,
     });
 
-    const verification_link = `https://devlance-saas.vercel.app/user/verify/${token}`;
+    const verification_link = `https://devlance-veiu.onrender.com/user/verify/${token}`;
 
     // Send verification email
 
