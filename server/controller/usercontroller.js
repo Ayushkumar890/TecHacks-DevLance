@@ -39,7 +39,7 @@ exports.postRegister = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     const photo = "client.jpg"; // Default profile pic
     if (userExists && userExists.verified === false) {
-      const alreadyuseremail = `https://devlance-saas.vercel.app/user/verify/${userExists.verification_token}`
+      const alreadyuseremail = `https://devlance-veiu.onrender.com/user/verify/${userExists.verification_token}`
       await mailSender(
         email,
         "Verification Email",
@@ -118,12 +118,14 @@ exports.verifyToken = async (req, res) => {
         message: "Invalid or expired verification token.",
       });
     }
+    return res.redirect("https://devlance-saas.vercel.app/login");
 
-    return res.status(200).json({
-      success: true,
-      message: "Account Verified! You can log in now.",
-      redirect: "/login",
-    });
+    // return res.status(200).json({
+    //   success: true,
+    //   message: "Account Verified! You can log in now.",
+    //   redirect: "/login",
+    // });
+
   } catch (e) {
     console.error("Verification error:", e);
     return res.status(500).json({
@@ -173,9 +175,9 @@ exports.postLogin = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,  
-      maxAge: 60 * 60 * 1000,      
-      sameSite: "none",    
+      secure: true,
+      maxAge: 60 * 60 * 1000,
+      sameSite: "none",
     });
 
 
