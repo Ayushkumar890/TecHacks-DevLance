@@ -38,8 +38,7 @@ export default function GithubVerify() {
 
   return (
     <div
-      style={{ backgroundImage: "url('/assets/images/bg2.jpg')" }}
-      className="h-screen bg-cover bg-center flex items-center justify-center"
+      className="h-screen bg-cover bg-center flex items-center justify-center bg-stone-700 "
     >
       <div className="bg-white bg-opacity-90 shadow-md rounded p-8 max-w-md w-full">
         <h2 className="text-2xl font-bold mb-4 text-center">
