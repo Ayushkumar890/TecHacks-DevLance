@@ -35,6 +35,10 @@ exports.isAuthenticated = (req, res, next) => {
 
 exports.GithubVerify = async (req, res) => {
     try {
+
+        console.log("Incoming body:", req.body);
+        console.log("Incoming cookies:", req.cookies);
+
         const { username } = req.body;
         const token = req.cookies.token;
 
