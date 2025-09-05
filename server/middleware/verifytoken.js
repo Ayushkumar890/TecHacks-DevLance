@@ -35,10 +35,10 @@ exports.isAuthenticated = (req, res, next) => {
 
 exports.GithubVerify = async (req, res) => {
     try {
-
-        console.log("Incoming body:", req.body);
-        console.log("Incoming cookies:", req.cookies);
-
+        console.error(req.body);
+        console.error(req.cookies.token);
+        console.log(req.body);
+        console.log(req.cookies.token);
         const { username } = req.body;
         const token = req.cookies.token;
 
@@ -57,6 +57,9 @@ exports.GithubVerify = async (req, res) => {
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+                console.error(process.env.JWT_SECRET);
+                console.log(process.env.JWT_SECRET);
+
         const userId = decoded._id;
 
         const githubResponse = await axios.get(`https://api.github.com/users/${username}`);
