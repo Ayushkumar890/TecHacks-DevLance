@@ -5,24 +5,34 @@ import { useNavigate } from "react-router-dom";
 export default function GithubVerify() {
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
     if (!username.trim()) {
       return setError("Please enter a GitHub username.");
     }
 
     try {
-      const res = await axios.post('https://devlance-veiu.onrender.com/api/auth/githubverify', { username }, { withCredentials: true });
+      setLoading(true);
+      const res = await axios.post(
+        "https://devlance-veiu.onrender.com/api/auth/githubverify",
+        { username },
+        { withCredentials: true }
+      );
+
       if (res.data.success) {
         navigate(res.data.redirect);
+      } else {
+        setError(res.data.message || "Verification failed");
       }
-      setError(res.data.message);
     } catch (err) {
-      console.log(err)
+      console.error("GitHub verify request failed:", err);
+      setError("Internal server error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,9 +57,10 @@ export default function GithubVerify() {
           {error && <p className="text-red-500 text-center">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700"
+            disabled={loading}
+            className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 disabled:opacity-50"
           >
-            Submit
+            {loading ? "Verifying..." : "Submit"}
           </button>
         </form>
       </div>
